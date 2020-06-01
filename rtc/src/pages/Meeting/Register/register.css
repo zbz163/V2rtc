@@ -1,0 +1,10 @@
+.App{width: 100%;height: 100%;}
+.register{width:100%;height:100%;display: flex;align-items: center}
+.register_box{width: 420px;padding:20px;margin: 10px auto;box-shadow: 0 0 5px #ddd;border-radius: 12px;position: relative;}
+.register_box .ant-input{width: 100%!important;}
+.register_list{margin-bottom: 20px;}
+.register_list>div{line-height: 40px;font-size: 16px;color:rgba(0,0,0,.85);text-align: left;}
+.register_login{position: absolute;bottom:-30px;left: 140px;font-size: 16px;color:#1890ff;cursor: pointer;}
+.register_svg{display: flex;}
+.register_svg .svgCode {height:32px}
+.register_svg .svgCode svg{height:32px}

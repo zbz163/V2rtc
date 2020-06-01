@@ -1,0 +1,48 @@
+.share_Stream_Box {
+    width: 100vw;
+    height: calc(100vh - 64px)
+}
+
+.share_Stream_Box .share_Stream_Wrap {
+    width: 80%;
+    height: calc(80vh - 64px - 40px);
+    margin: 0 auto;
+    position: relative;
+}
+
+.share_Stream_Box .share_Stream_Wrap .streamBox_share {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.share_Stream_Box .no_Share_Stream_Wrap {
+    width: 95%;
+    height: 20vh;
+    margin: 10px auto;
+    
+}
+
+.share_Stream_Box .no_Share_Stream_Wrap .streamBox_share {
+    flex-direction: row;
+    width: 23%;
+    height: 80%;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.share_Stream_Wrap #share_img{
+    position: absolute;
+    right: -30px;
+    bottom: 0;
+    display: none;
+}
+.licode_bar {
+    display: none !important;
+}
+
+.licode_bar:hover {
+    display: none !important;
+}
+#no_Share_Stream_Wrap{display: block;}
+.wrap_just{width:100%;height:100%;display: flex;justify-content: center;}

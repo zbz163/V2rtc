@@ -1,0 +1,3 @@
+.share_Stream_Box .share_Stream_Wrap .streamBox_share{width: 100%;height: 100%;}
+
+.share_Stream_Box .no_Share_Stream_Wrap .streamBox_share{flex-direction:row;width: 23%;height: 80%;margin-right: 10px;margin-bottom: 5px;}

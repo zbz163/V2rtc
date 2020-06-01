@@ -1,0 +1,40 @@
+.speaker_Show{width: 100vw;height: 100vh;position: fixed;left: 0;}
+.speaker_box{width: 100%;height: 100%;background: #666;display: none}
+.speaker_actives{display:flex;justify-content: center;flex-direction:row;flex-wrap:wrap}
+.speaker_active{display:block;}
+.speaker_oneShow.speaker_box.speaker_active{display:flex;}
+.speaker_oneShow.speaker_box.speaker_active>div>div{width: 100%;height: 100%;}
+.speaker_oneShow.speaker_box.speaker_active .meeting.speaker_active{display:flex;}
+.speaker_twoShow>div{display: flex;width:100%;height: 100%;}
+.speaker_twoShow>div div{height: 100%;width: 50%;}
+.speaker_twoShow>div div:nth-child(1){background: #6d6d6d}
+.speaker_twoShow>div div:nth-child(2){background: #666}
+
+.speaker_threeShow div:nth-child(1){display: flex}
+.speaker_threeShow div:nth-child(1) div:nth-child(1){width: 50vw;height: 50vh;background: #999}
+.speaker_threeShow div:nth-child(1) div:nth-child(2){width: 50vw;height: 50vh;background: #666}
+.speaker_threeShow div:nth-child(2){display: flex}
+.speaker_threeShow div:nth-child(2) div:nth-child(1){width: 50vw;height: 50vh;background: #6d6d6d}
+.speaker_threeShow div:nth-child(2) div:nth-child(2){width: 50vw;height: 50vh;background: #555}
+
+.speaker_fourShow>div:nth-child(1){width: 100%;height:74%;background: #999}
+.speaker_fourShow>div:nth-child(2){display: flex;flex-wrap:nowrap;width: 100%;height: 20%;background: black;padding:20px}
+.speaker_fourShow>div:nth-child(2)>div{width: 14%;height:82%;background: #666;margin-left:8%;border-radius: 6px}
+
+.speaker_fiveShow>div:nth-child(1){width: 100%;height:74%;background: #999;display: flex}
+.speaker_fiveShow>div:nth-child(1) div{width: 50%;height:100%;}
+.speaker_fiveShow>div:nth-child(1) div:nth-child(1){background: #999}
+.speaker_fiveShow>div:nth-child(1) div:nth-child(2){background: #666}
+.speaker_fiveShow>div:nth-child(2){display: flex;flex-wrap:nowrap;width: 100%;height: 20%;background: black;padding:20px}
+.speaker_fiveShow>div:nth-child(2)>div{width: 14%;height:82%;background: #666;margin-left:8%;border-radius: 6px}
+
+.speaker_sixShow>div:nth-child(1){width:100%;height:37%;display: flex}
+.speaker_sixShow>div:nth-child(1) div{width:50%;height:100%;}
+.speaker_sixShow>div:nth-child(1) div:nth-child(1){background:#999}
+.speaker_sixShow>div:nth-child(1) div:nth-child(2){background:#666}
+.speaker_sixShow>div:nth-child(2){width:100%;height:37%;display: flex}
+.speaker_sixShow>div:nth-child(2) div{width:50%;height:100%;}
+.speaker_sixShow>div:nth-child(2) div:nth-child(1){background:#6d6d6d}
+.speaker_sixShow>div:nth-child(2) div:nth-child(2){background:#555}
+.speaker_sixShow>div:nth-child(3){display: flex;flex-wrap:nowrap;width: 100%;height: 20%;background: black;padding:20px}
+.speaker_sixShow>div:nth-child(3)>div{width: 14%;height:82%;background: #666;margin-left:8%;border-radius: 6px}

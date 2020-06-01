@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.8.7/skins/default/aliplayer-min.css" />
+    <script type="text/javascript" charset="utf-8" src="https://g.alicdn.com/de/prismplayer/2.8.7/aliplayer-min.js"></script>
+</head>
+<body style="margin: 0;">
+<div id='J_prismPlayer'>
+    <div class="prism-player" id="J_prismPlayer" style="position: absolute"></div>
+</div>
+<script>
+    window.onload = function(event){
+
+        // 监听message事件 接收react传过来的参数
+        // console.log('onload ,监听事件：', event );
+        window.addEventListener("message", receiveMessageFromReact);
+
+        // 向父页面发送加载成功信息
+        parent.postMessage('来自父页面的信息','*'); //window.postMessage
+        // console.log('............onload.parent.postMessage');
+    }
+    function reactplayer(playerUrl){
+        var player = new Aliplayer({
+            id: 'J_prismPlayer',
+            width: '100%',
+            height: "500px",
+            autoplay: true,
+            isLive: true,
+            playsinline: true,
+            preload: true,
+            showBarTime: 10000,
+            controlBarVisibility: "hover",
+            useH5Prism: true,
+            source : playerUrl,
+            //https://pullrtc.ivage.com/normallsd/5e718c040e68177ac573122d5e718c140e68177ac573122f_lsd.flv?auth_key=1584586132-0-0-9049cef158167805eca2050643c41ac8
+        },function(player){
+            console.log('播放器创建好了。')
+        });
+    }
+    // 接收react发送的数据
+    function receiveMessageFromReact( event ) {
+        // console.log( '我是iframe,我接收到了数据22：', event.data );
+        window.reactData = event.data;
+        playerUrl = event.data.source;
+        reactplayer(playerUrl);
+    };
+</script>
+</body>

@@ -1,0 +1,1 @@
+export const REMOVE_STORY_BOARD = 'v2chat/remove/story/board';

@@ -1,0 +1,22 @@
+.be_invited_user{
+    margin-top: 10px;
+    padding: 5px 5px;
+    max-height: 400px;
+    overflow-y: auto;
+    background: #e0e0e0;
+    border-radius: 5px;
+    line-height: 1.5;
+    font-size: 14px;
+}
+.be_invited_user_li{
+    padding: 5px 0px;
+    overflow: hidden;
+    border-bottom: solid 1px #202020;
+}
+.be_invited_user_li .be_invited_user_li_left{
+    float: left;
+    line-height: 34px;
+}
+.be_invited_user_li .be_invited_user_li_right{
+    float: right;
+}

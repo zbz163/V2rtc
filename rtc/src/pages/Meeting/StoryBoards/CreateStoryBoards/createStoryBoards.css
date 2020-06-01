@@ -1,0 +1,63 @@
+.storyboard_content{background-color:#242C3D;width: 100%;height:100%;min-height: 100vh;}
+.storyboard_colse{color:#99AAC2;font-size: 16px;width: 100%;height: 100px;padding: 30px 0 0 30px;}
+.scences_box{overflow: hidden;}
+/* .content{float: left; width: 100%;font-weight: 800;padding-left: 30px;color:rgba(255, 255, 255, 0.75);font-size: 24px;} */
+/* .content .content_jia{width: calc((100% / 4) - 40px);height:calc(18vh + 12px);border-radius: 4px;border:1px dashed #999;text-align: center;line-height: calc(18vh + 12px);cursor: pointer;} */
+.contentScenes{float: left; width: calc(100% / 4);font-weight: 800;padding-left: 30px;color:rgba(255, 255, 255, 0.75);font-size: 24px;}
+.contentScenes .content_jia{width: 100%;height:calc(18vh + 12px);border-radius: 4px;border:1px dashed #999;text-align: center;line-height: calc(18vh + 12px);cursor: pointer;}
+
+.storyboard_option{width:300px;height:100%;background-color: rgba(255, 255, 255, 0.04);position: fixed;right: 0;top:0;color:#C8CACE;overflow-y: auto;}
+.option_btn{text-align: center;padding:20px 0;border-bottom: 1px solid rgba(65, 73, 91, 0.75);}
+.option_btn .option_button{margin-left:10px;min-width: 64px;padding:6px 18px;width: 100px;}
+.option_color{padding-bottom: 30px;border-bottom: 1px solid rgba(65, 73, 91, 0.75);}
+.option_color p{font-size: 16px;font-weight: 800;padding: 30px 0 0 30px;}
+.option_color .color_click{padding-left: 20px;}
+.option_color .color_click label{margin-left:10px}
+.option_color label:nth-child(1){border: 2px solid #f8f9fa;border-radius: 50%;width:20px;height:20px;margin-top: 6px;}
+.option_color label:nth-child(1) .ant-radio-inner::after{background-color:#f8f9fa;border: 1px solid #f8f9fa;}
+.option_color label:nth-child(2){border: 2px solid blue;border-radius: 50%;width:20px;height:20px;margin-top: 6px;}
+.option_color label:nth-child(2) .ant-radio-inner::after{background-color:blue;border: 1px solid blue;}
+.option_color label:nth-child(3){border: 2px solid yellow;border-radius: 50%;width:20px;height:20px;margin-top: 6px;}
+.option_color label:nth-child(3) .ant-radio-inner::after{background-color:yellow;border: 1px solid yellow;}
+.option_color label:nth-child(4){border: 2px solid #20c997;border-radius: 50%;width:20px;height:20px;margin-top: 6px;}
+.option_color label:nth-child(4) .ant-radio-inner::after{background-color:#20c997;border: 1px solid #20c997;}
+.option_color label:nth-child(5){border: 2px solid #dc3545;border-radius: 50%;width:20px;height:20px;margin-top: 6px;}
+.option_color label:nth-child(5) .ant-radio-inner::after{background-color:#dc3545;border: 1px solid #dc3545;}
+.option_color .ant-radio-wrapper{line-height: 0.5;}
+.option_color .ant-radio-inner{background-color:rgba(255, 255, 255, 0.04)!important;border-color:rgba(255, 255, 255, 0.04)!important}
+.option_color .ant-radio-checked .ant-radio-inner{background-color:rgba(255, 255, 255, 0.04)!important}
+.option_image{padding:30px;border-bottom: 1px solid rgba(65, 73, 91, 0.75);}
+.image_title p{float: left;}
+.image_title button{float: right;}
+.option_image .image_button{width: 100%;}
+.image_slider p{font-size: 12px;padding-top: 6px;color: #99AAC2;}
+
+.option_trademark{padding:30px;border-bottom: 1px solid rgba(65, 73, 91, 0.75);}
+.trademark_title p{float: left;}
+.trademark_title button{float: right;}
+.option_trademark .trademark_button{width: 100%;}
+
+.option_watermark{padding:30px;border-bottom: 1px solid rgba(65, 73, 91, 0.75);}
+.watermark_title p{float: left;}
+.watermark_title button{float: right;}
+.option_watermark .watermark_button{width: 100%;}
+.watermark_p{font-size: 12px;padding-top: 6px;color: #99AAC2;}
+
+
+
+.option_thumbnail{padding:30px;border-bottom: 1px solid rgba(65, 73, 91, 0.75);}
+.thumbnail_title p{float: left;}
+.option_thumbnail .thumbnail_button{width: 100%;}
+
+.avatar-uploader > .ant-upload {width: 128px;height: 128px;}
+.trademark_img{width:128px;margin: 30px auto 10px;}
+.option_trademark .ant-upload{width:100%}
+.option_trademark .thumbnail_button{width:100%}
+
+.option_thumbnail .ant-upload{width:100%}
+.option_thumbnail .thumbnail_button{width:100%}
+.option_remarks{padding:30px}
+.option_remarks .ant-input{background-color: rgba(255, 255, 255, 0.04);border:1px solid rgba(255, 255, 255, 0.04);resize:none;color:rgba(150, 170, 196, 0.72)}
+.option_remarks .ant-input:hover{border:1px solid rgba(255, 255, 255, 0.04);}
+
+.option_s{border:2px solid #7DBAF7}

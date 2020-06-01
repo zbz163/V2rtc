@@ -1,0 +1,25 @@
+.user_meeting_box_title{
+    padding: 50px 50px 0px;
+    display: inline-block;
+    cursor: pointer;
+}
+.user_meeting_box{
+    padding: 50px;
+    overflow: hidden;
+}
+.user_meeting_box .user_meeting_left{
+    float: left;
+}
+.user_meeting_box .user_meeting_right{
+    float: right;
+}
+
+.operate_meeting .operate_meeting_item{
+    display: inline-block;
+    padding: 3px 5px;
+    cursor: pointer;
+    margin: 0px 2px;
+}
+.user_meeting_list{
+    padding: 0px 50px;
+}

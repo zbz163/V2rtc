@@ -1,0 +1,20 @@
+.streamBoxs {
+    padding-left: 10px;
+    padding-top:15px
+}
+.streams {
+    /* width: calc((100vw - 50px) / 2);
+    height: calc((100vh - 150px) / 2); */
+    margin: 8px;
+    border-radius: 10px;
+    margin: 0px;
+    border: 4px solid #02598a;
+    overflow: hidden;
+}
+.stream:nth-child(even){
+    margin-left:10px
+}
+.stream.active {
+    background: '../images/bg_new.png'
+}
+

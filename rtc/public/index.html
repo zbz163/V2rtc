@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1 , maximum-scale=1.0," />
+    <meta name="theme-color" content="#000000" />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <script type="text/javascript" src="https://rtc.ivage.com/socketcluster.min.js"></script>
+    <!-- <script type="text/javascript" src="socketfunc.js"></script> -->
+    <!-- <script>document.write('<script src="./socketcluster.js?t=' + new Date().getTime() + '"><\/script>')</script>
+    <script>document.write('<script src="./socketfunc.js?t=' + new Date().getTime() + '"><\/script>')</script> -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!-- <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" charset="utf-8" src="detection.js"></script> -->
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>爱会聚</title>
+
+    <style>
+        #root {
+            width: 100%;
+            height: 100%;
+        }
+        #d1{
+            z-index: 2;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-left: -200px;
+            margin-top: -150px;
+            overflow: hidden;
+            display: none;
+            background-color: white;
+            border-radius: 4px;
+        }
+        #d2{
+            position: fixed;
+            left: 0;
+            top:0;
+            width: 100%;
+            height: 100%;
+            background-color: grey;
+            z-index: 1;
+            opacity: 0.8;
+            display: none;
+        }
+        #number{
+            display: block;
+            width: 90%;
+            height: 30px;
+            margin: 40px auto;
+            border: solid 1px #248CD6;
+            border-radius: 5px;
+            outline: none;
+            padding-left: 5px;
+        }
+        #number:focus{
+            border: solid 1px #248CD6;
+            border-radius: 5px;
+            box-shadow: 0 0 8px #248CD6;
+        }
+        .root_title{padding:32px 32px 24px;font-size: 16px;}
+        .submit{
+            display: flex;
+            width: 90%;
+            height: 40px;
+            margin: 20px auto;
+            justify-content: flex-end;
+        }
+        .confirm{
+          background-color: #248CD6;
+        }
+        .cancel,.confirm{
+            padding: 4px 15px;
+            height: 32px;
+            margin: 2px;
+            border: none;
+            transition: all 0.2s;
+        }
+        .cancel:hover,.confirm:hover{
+            color: white;
+            cursor: pointer;
+        }
+        .top{
+            width: 90%;
+            height: 20px;
+            margin: 2px auto;
+        }
+        .top a{
+            float: right;
+            margin-right: 2px;
+            text-decoration: none;
+            color: #3A3C3D;
+            opacity: 0.5;
+        }
+        .top a:hover{
+            opacity: 1;
+        }
+        .inner{
+            display: table-cell;
+            vertical-align: middle;
+            width: 100vw;
+            height: 100vh;
+          }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <div id="d2"></div>
+    <div id="d1">
+      <p class="root_title">您的浏览器暂不支持屏幕共享，是否继续使用?</p>
+      <div class="submit">
+          <button class="cancel" id="cancel">取消</button>
+          <button class="confirm" id="confirm">确定</button>
+      </div>
+  </div>
+
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script>
+      var socket;
+      function initWebSocket(){
+        if(socketCluster == undefined){
+          console.log('********999999999')
+        }
+        // console.log(createWebSocket(socketCluster))
+        socket = createWebSocket(socketCluster);
+        
+        socket.on('connect', function () {
+          console.log('sc.html..CONNECTED.');
+        });
+        
+        // Listen to an event called 'rand' from the server
+        socket.on('message', function(data) {
+          console.log('received from server.  message:' + data);
+          serviceReturn(data)
+        });
+
+        socket.on('sample', function(data) {
+          console.log('received from server.  sample:' + data);
+        });
+
+      }
+    
+      function popup() {
+          let d2=document.getElementById("d2");
+          d2.style.display="block";
+          let d1=document.getElementById("d1");
+          d1.style.display="block";
+      }
+      window.onload=function(){
+
+
+        setTimeout(function(){
+
+          initWebSocket();
+        },100)
+        setInterval(() => {
+          console.log(window)
+          if(window.socket == undefined){
+            console.log('*********111111111',window)
+            setTimeout(() => {
+              initWebSocket();
+            }, 1000);
+          }
+        }, 2000);
+
+        // let isfalse = true;
+        // console.log(socket)
+        // socket = createWebSocket(socketCluster);
+        //     socket.on('connect', function () {
+        //         console.log(window,socket)
+        //         isfalse == false;
+        //         console.log('sc.html..CONNECTED.');
+        //     });
+        //     socket.on('message', function(data) {
+        //         console.log('received from server.  message:' + data);
+        //     });
+        //     socket.on('sample', function(data) {
+        //         console.log('received from server.  sample:' + data);
+        //     });
+        // if(window.socket == undefined && isfalse == true){
+        //     console.log(1111111,isfalse)
+        //     socket = createWebSocket(socketCluster);
+        //     socket.on('connect', function () {
+        //         console.log(window,socket)
+        //         isfalse == false;
+        //         console.log('sc.html..CONNECTED.');
+        //     });
+        //     socket.on('message', function(data) {
+        //         console.log('received from server.  message:' + data);
+        //     });
+        //     socket.on('sample', function(data) {
+        //         console.log('received from server.  sample:' + data);
+        //     });
+        // }else if(window.socket == undefined){
+        //     console.log(33333)
+        //     isfalse == true;
+        // }else if(isfalse == false){
+        // console.log(22222222,isfalse)
+        // }
+
+        var btn2 = document.getElementById('btn2');
+        var cancel = document.getElementById('cancel');
+        var confirm = document.getElementById('confirm');
+        var root = document.getElementById("root");
+        cancel.onclick=function() {
+          let d2=document.getElementById("d2");
+            d2.style.display="none";
+            let d1=document.getElementById("d1");
+            d1.style.display="none";
+            console.log("您点击了取消");
+            root.innerHTML = '屏幕共享暂不支持该浏览器，请更换为谷歌、火狐、苹果、欧朋、微软Edge等浏览器';
+            root.style.textAlign = 'center';
+            root.style.fontSize = '30px';
+        }
+        confirm.onclick=function() {
+          let d2=document.getElementById("d2");
+          d2.style.display="none";
+          let d1=document.getElementById("d1");
+          d1.style.display="none";
+          console.log("您点击了确定");
+        }
+        var ua = navigator.userAgent.toLocaleLowerCase();
+        var issafariBrowser = /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
+        // console.log(ua)
+        var browserType=null;
+        if (ua.match(/msie/) != null || ua.match(/trident/) != null) {
+            browserType = "IE";
+            root.innerHTML = '<span class="inner">暂不支持该浏览器，请更换为谷歌、火狐、苹果、欧朋、微软Edge等浏览器</span>';
+            root.style.textAlign = 'center';
+            root.style.fontSize = '30px';
+        } else if (ua.match(/firefox/) != null) {
+            browserType = "火狐";
+            popup();
+        }else if (ua.match(/ubrowser/) != null) {
+            browserType = "UC";
+            root.innerHTML = '<span class="inner">暂不支持该浏览器，请更换为谷歌、火狐、苹果、欧朋、微软Edge等浏览器</span>';
+            root.style.textAlign = 'center';
+            root.style.fontSize = '30px';
+        }else if (ua.match(/opera/) != null) {
+            browserType = "欧朋";
+        } else if (ua.match(/bidubrowser/) != null) {
+            browserType = "百度";
+        }else if (ua.match(/metasr/) != null) {
+            browserType = "搜狗";
+            root.innerHTML = '<span class="inner">暂不支持该浏览器，请更换为谷歌、火狐、苹果、欧朋、微软Edge等浏览器</span>';
+            root.style.textAlign = 'center';
+            root.style.fontSize = '30px';
+        }else if (ua.match(/tencenttraveler/) != null || ua.match(/qqbrowse/) != null) {
+            browserType = "QQ";
+            root.innerHTML = '<span class="inner">暂不支持该浏览器，请更换为谷歌、火狐、苹果、欧朋、微软Edge等浏览器</span>';
+            root.style.textAlign = 'center';
+            root.style.fontSize = '30px';
+        }else if (ua.match(/maxthon/) != null) {
+            browserType = "遨游";
+            root.innerHTML = '<span class="inner">暂不支持该浏览器，请更换为谷歌、火狐、苹果、欧朋、微软Edge等浏览器</span>';
+            root.style.textAlign = 'center';
+            root.style.fontSize = '30px';
+        }else if (ua.match(/chrome/) != null) {
+            if(window.navigator.userActivation){
+                browserType = '谷歌';
+            }else{
+                browserType = '360';
+                console.log('360')
+                var is360js = _mime("type", "application/vnd.chromium.remoting-viewer");
+                function _mime(option, value) {
+                    var mimeTypes = navigator.mimeTypes;
+                    for (var mt in mimeTypes) {
+                        if (mimeTypes[mt][option] == value) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+                if(is360js){
+    //                 browserType = '360兼容模式';
+                }else{
+    //                 browserType = '360急速模式';
+                }
+            }
+        }
+      }
+     
+      function createWebSocket(socketCluster){
+    var options = {
+        path: '/socketcluster/',
+        port: 8003,
+        hostname: '192.168.2.100',
+        autoConnect: true,
+        secure: false,
+        rejectUnauthorized: false,
+        connectTimeout: 10000, //milliseconds
+        ackTimeout: 10000, //milliseconds
+        channelPrefix: null,
+        disconnectOnUnload: true,
+        multiplex: true,
+        autoReconnectOptions: {
+          initialDelay: 10000, //milliseconds
+          randomness: 10000, //milliseconds
+          multiplier: 1.5, //decimal
+          maxDelay: 60000 //milliseconds
+        },
+        authEngine: null,
+        codecEngine: null,
+        subscriptionRetryOptions: {},
+        query: {
+          yourparam: 'hello'
+        }
+    };
+      
+    // Initiate the connection to the server
+    return socketCluster.create(options);
+  }
+
+  // function sendMessageToServer(msgType, msgId, msgData){
+  //   var sendMsg = {type: msgType, id:msgId, data:msgData};
+  //   socket.send(JSON.stringify(sendMsg));
+  //   console.log("send message to server. message =", sendMsg);
+  // }
+  let datas;
+  function serviceReturn(data){
+    console.log('///////////////////99999999',data)
+      if(data != '#1'){
+        return datas = JSON.parse(data);
+    }
+    console.log('**************return',data)
+  }
+  function sendMessageToServer(id, from, to, xmlns, meetingID, mic, cam ){ //进入会议后，上报设备状态；退出会议
+    let args = {
+      id   : id,
+      type : 'iq', 
+      from : from,  // usreID 真实或者临时
+      to   : to,  // meetingID 会议, liveID 直播
+      xmlns: xmlns,
+      data : 
+      {
+        meetingID:meetingID,
+        mic:mic,
+        cam:cam,
+      }
+    }
+    const a = JSON.stringify(args);
+    socket.send(a);
+    console.log("send message to server. message =", a);
+  }
+  function sendMessageMettingMode(id, from, to, xmlns, meetingID, deal){//开始/停止支持人模式
+    let args = {
+      id   : id,
+      type : 'iq', 
+      from : from,  // usreID 真实或者临时
+      to   : to,  // meetingID 会议, liveID 直播
+      xmlns: xmlns,
+      data : 
+      {
+        deal:deal,
+        meetingID:meetingID,
+      }
+    }
+    const a = JSON.stringify(args);
+    socket.send(a);
+    console.log("send message to server. message =", a);
+  }
+  function sendMessageModerator(id, from, to, xmlns, meetingID, deal, charmanPws){//成为/放弃主持人
+    let args = {
+      id   : id,
+      type : 'iq', 
+      from : from,  // usreID 真实或者临时
+      to   : to,  // meetingID 会议, liveID 直播
+      xmlns: xmlns,
+      data : 
+      {
+        deal:deal,
+        meetingID:meetingID,
+        charmanPws:charmanPws
+      }
+    }
+    const a = JSON.stringify(args);
+    socket.send(a);
+    console.log("send message to server. message =", a);
+  }
+  function sendMessageDealdevice(id, from, to, xmlns, meetingID, deal, camID , micID ){//主持人打开/关闭参会者摄像头、麦克风
+    let args = {
+      id   : id,
+      type : 'iq', 
+      from : from,  // usreID 真实或者临时
+      to   : to,  // meetingID 会议, liveID 直播
+      xmlns: xmlns,
+      data : 
+      {
+        deal:deal,
+        meetingID:meetingID,
+        camID:camID,
+        micID:micID
+      }
+    }
+    const a = JSON.stringify(args);
+    socket.send(a);
+    console.log("send message to server. message =", a);
+  }
+  function sendMessageRaiseHand(id, from, to, xmlns, meetingID, deal,userID){//用户举手，打开本地摄像头、麦克风 ;  用户举手，主持人应答
+    let args = {
+      id   : id,
+      type : 'iq', 
+      from : from,  // usreID 真实或者临时
+      to   : to,  // meetingID 会议, liveID 直播
+      xmlns: xmlns,
+      data : 
+      {
+        deal:deal,
+        meetingID:meetingID,
+        userID:userID
+      }
+    }
+    const a = JSON.stringify(args);
+    socket.send(a);
+    console.log("send message to server. message =", a);
+  }
+  function userloginToServer(msgId, userId, userPws){
+    var sendMsg = {type:'login', id:msgId, data:{userId:userId, userPws: userPws}};
+    socket.send(JSON.stringify(sendMsg));
+    console.log("send message to server. userlogin =", sendMsg);
+  }
+
+     </script>
+     
+  </body>
+  
+</html>

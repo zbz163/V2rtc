@@ -1,0 +1,59 @@
+.todo-item{
+    border-top:1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 10px 10px 10px; 
+}
+.todo-item .list_Box{
+    /* padding: 10px 10px 10px 30px; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.list_portrait{
+    height: 50px;
+    width: 50px;
+    margin: auto;
+    background: #d4d4d4;
+    border-radius: 50%;
+}
+.list_portrait img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.todo-item .list_name{
+    width: 80%;
+    flex: 1 1 auto;
+    padding: 0px;
+}
+.todo-item .list_name .list_names{
+    width: 100%;
+    margin-left: 10px;
+    text-align: left;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.todo-item .list_name .list_names div{
+    width: 100%;
+    text-align: left;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.todo-item .list_name .list_names .moderator_operate{
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+    background:rgb(14, 13, 13);
+    margin-top: 5px;
+    margin-right: 5px;
+    border-radius: 50%;
+    border: solid 1px #fff;
+}
+
+.ches_list_bg{background-color: rgba(212,212,212,.2);display: flex;}
+.list_audio{cursor: pointer;width: 24px;height: 24px;}
+.list_audio i{font-size: 24px;color:#fff}
+

@@ -1,0 +1,15 @@
+.slider{position: relative;}
+.slider img{cursor: pointer;}
+.slider_click{width: 312px;height: 252px;background-color:#41495B;position: absolute;top: 70px;right: 0;padding: 24px;display: none;z-index:99;}
+.slider .sj{width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-bottom:16px solid #41495B;position: absolute;right: 26px;top: 54px;display: none}
+.slider_content{width: 100%;height: 100%;border: 2px solid;border-color: #22293c;position: relative;}
+.slider_content>span{display: inline-flex;color: rgba(153, 170, 194, 0.85) !important;background: #41495b;padding: 0px 10px 15px;font-size: 14px;position: absolute;top: -10px;left: 20px;}
+.layui-input{background-color: #222A3C;border:none}
+.layui-edge{margin-top: 10px!important}
+.layui-form-selected .layui-edge{margin-top: 2px!important}
+.layui-form-label{text-align: left;padding-left: 24px;color: rgba(153, 170, 194, 0.85);font-size: 12px}
+.layui-form-select dl{top:57px}
+.slider_content .layui-form-label{padding-left: 10px;}
+.layui-form-text{padding-bottom: 10px;text-align: left;}
+/* .ant-select-selection{background-color: #222A3C;border:1px solid #222A3C;} */
+.slider_bth{width: 100px;height:40px;float:right;cursor: pointer;border-radius: 20px;border:1px solid rgba(255, 255, 255, 0.3);text-align: center;line-height: 40px;color:rgba(255, 255, 255, 0.75)}

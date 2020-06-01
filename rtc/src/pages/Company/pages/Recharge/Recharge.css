@@ -1,0 +1,26 @@
+*{margin: 0;padding:0}
+li{list-style: none;}
+.top_change{width: 100%;height: 40px;padding: 0 20px;display: flex;margin-top:40px}
+.top_money{width: 35vw;height: 100%;display: flex;vertical-align: top;line-height: 40px;margin-right: 2%;}
+.top_money p{width: 100px;}
+.money_xian{width: 80%;height: 1px; background: #999;margin-top: 19px;margin-left: 3%;}
+.top_mode{width: 35vw;height: 100%;display: flex;vertical-align: top;line-height: 40px;margin-right: 2%;}
+.top_mode p{width: 100px;}
+.mode_xian{width: 80%;height: 1px; background: #999;margin-top: 19px;margin-left: 3%;}
+.top_result{line-height: 40px;}
+.top_result p{width:100px}
+
+.recharge ul{width:600px;height:420px;margin: 0 auto;padding:40px 0}
+.recharge ul li{width:33.3333333%;height:120px;float: left;}
+.rechargeList_text{width: 90%;height: 100px;border:2px solid #0a9ad8;font-size: 16px;color:#0a9ad8;text-align: center;line-height: 100px;cursor: pointer;}
+.cope_with{width: 50vw;height:50px;border:1px solid #d4d4d4;margin: 0 auto; display: flex;flex-direction: row;justify-content: space-between;line-height: 50px;padding:0 40px}
+.cope_title{color:#333;font-size: 16px;}
+.rechargeList_active{border:2px solid red}
+
+.mode_list_box{width: 700px;height: 300px;margin: 50px auto;text-align: center;}
+.mode_list{width: 700px;height: 150px;display: flex;flex-direction: row;justify-content: space-between;margin-bottom: 30px;}
+.mode_list_public{width:330px;height: 150px;border:1px solid #d4d4d4;text-align: center;line-height: 150px;font-size: 16px;cursor: pointer;}
+.mode_title{font-size:16px;color:#333;}
+.mode_title span{font-size: 30px;color:#43bc99;}
+
+.result_box{text-align: center;padding-top: 50px;}

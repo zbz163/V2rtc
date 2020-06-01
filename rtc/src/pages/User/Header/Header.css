@@ -1,0 +1,11 @@
+.homepage_portrait{width: 100%;height: 20vh;display: flex;justify-content: flex-end;padding:40px;cursor: pointer;position: relative;}
+.homepage_portrait_box{width: 100px;height: 100px;border-radius: 50%;overflow: hidden;}
+.homepage_portrait_box_img{
+    width:100%;
+    height: 100%;
+}
+.homepage_portrait .portrait_list{width:100px;position: absolute;top:150px;right:40px;background: #6d6d6d;border-radius: 10px;text-align: center;line-height: 30px;color:#fff}
+.homepage_portrait .portrait_list > div{border-top: solid 1px #fff;}
+.homepage_portrait .portrait_list > div:first{border-top: none;}
+.homepage_portrait .homepage_name{padding:20px 30px 0 0}
+.homepage_portrait .homepage_name p{font-size: 16px;font-weight: 600;text-align: center;}

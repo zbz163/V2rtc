@@ -1,0 +1,5 @@
+.content_jia.scenes{width:300px; height: 200px;}
+.streamBox.scenes{
+    transform: scale(0.2,0.2);
+    transform-origin: -6px 0px 0px;
+}

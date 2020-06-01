@@ -1,0 +1,88 @@
+
+
+.todo-item{
+    padding: 5px 15px;
+}
+.item_chat_li{
+    display: block !important;
+    padding: 10px 5px;
+}
+.item_chat_li .item_chat_box{
+    overflow: hidden;
+    display: flex;
+}
+.item_chat_li.active .item_chat_box{
+    flex-direction: row-reverse;
+}
+.item_chat_li .item_chat_box .item_chat_box_left{
+    text-align: left;
+    flex: 1 1 auto;
+    padding-right: 8px !important;
+    padding-left: 0 !important;
+}
+
+.item_chat_li .item_chat_box .item_chat_box_left .item_chat_box_left_time{
+    font-size: 9px !important;
+    color: #99AAC2;
+    text-indent: 15px;
+}
+.item_chat_li .item_chat_box .item_chat_box_left .item_chat_box_left_title{
+    width:auto;
+    padding: 10px !important;
+    margin-left: 10px !important;
+    color: #A5B6CE !important;
+    background-color: rgba(65, 73, 91, 0.75);
+    border-radius: 0 15px 15px 15px;
+    /* position: relative; */
+    white-space: normal;
+    word-wrap: break-word;
+    word-break:break-all;
+    line-height: 20px;
+}
+.item_chat_li .item_chat_box .item_chat_box_left .item_chat_box_left_title .item_chat_box_left_title_name{
+    font-weight: 900 !important;
+}
+
+.item_chat_li .item_chat_box .item_chat_box_left .item_chat_box_left_title .item_chat_box_left_title_img_box{
+    margin-left: 5px;
+    cursor: pointer;
+}
+.item_chat_li .item_chat_box .item_chat_box_left .item_chat_box_left_title .item_chat_box_left_title_img{
+    width: 20px;
+    height: 20px;
+}
+
+.item_chat_li .item_chat_box .item_chat_box_right{
+    width: 50px !important;
+    height: 50px;
+    padding: 10px 3px 3px 3px!important;
+    border-radius: 50%;
+}
+.item_chat_li .item_chat_box .item_chat_box_right .item_chat_box_right_name{
+    background-color: #8192ad;
+    text-transform: uppercase;
+    width: 40px !important;
+    height: 40px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    color: #fafafa;
+    font-size: 1.25rem;
+    line-height: 40px;
+}
+.item_chat_li .item_chat_box .item_chat_box_left .item_chat_box_left_translations{
+    width:282px;
+    padding: 10px !important;
+    margin-left: 10px !important;
+    color: #A5B6CE !important;
+    background-color: rgba(65, 73, 91, 0.75);
+    border-radius: 0 15px 15px 15px;
+    /* position: relative; */
+    white-space: normal;
+    word-wrap: break-word;
+    word-break:break-all;
+    line-height: 20px;
+}
+/* .item_chat_li .item_chat_box .item_chat_box_left .item_chat_box_left_translations .item_chat_box_left_translations_message{
+    font-weight: 900 !important;
+} */
